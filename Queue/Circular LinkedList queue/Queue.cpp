@@ -10,7 +10,8 @@ int main(){
         cout << "2. pop\n";
         cout << "3. display\n";
         cout << "4. Show Top\n";
-        cout << "5. Exit\n";
+        cout << "5. interleave\n";
+        cout << "6. Exit\n";
         cout << "your choice : ";
         cin >> choice ;
         switch(choice){
@@ -34,6 +35,9 @@ int main(){
                 }
                 break;
             case 5:
+                q.interleave();
+                break;
+            case 6:
                 user = 0;
                 cout << "exiting program !"<<endl;
                 break;
