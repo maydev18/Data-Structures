@@ -62,7 +62,8 @@ class BST{
         void deleteByPredecessor(int key);
         void deleteBySuccessor(int key);
         void deleteByCopying(int key);
-        TreeNode * leastCommonAncestor(TreeNode * root , int key1 , int key2);
+        friend TreeNode * leastCommonAncestor(TreeNode * root , int key1 , int key2);
+        TreeNode * LCA(int key1 , int key2);
         void nodesAtDistanceK(int target , int k); //starting from the node whose value is target print all other nodes which are at a distance K from it.
         string serialise();
         friend TreeNode * deserialise(string str);
@@ -466,7 +467,8 @@ void BST :: deleteByCopying(int key){
     }
     //It could have been done by keeping 2 separate checks for leaf and one child nodes, but I have made it pure copying based ,for leaf nodes its simple, but for one child nodes it deletes by copying not by simply remove the node.
 }
-TreeNode * BST :: leastCommonAncestor(TreeNode * root , int key1 , int key2){
+//below LCA is for general Binary trees
+TreeNode * leastCommonAncestor(TreeNode * root , int key1 , int key2){
     // we are using dfs(preorder) here
     if(!root || root->value == key1 || root->value == key2){
         return root;
@@ -476,6 +478,19 @@ TreeNode * BST :: leastCommonAncestor(TreeNode * root , int key1 , int key2){
     if(!l) return r;
     else if(!r) return l;
     else return root;
+}
+//below lca is for BST
+TreeNode * BST :: LCA(int key1 , int key2){
+    TreeNode * temp = root;
+    while(true){
+        if(root->value > key1 && root->value > key2){
+            root = root->left;
+        }
+        else if(root->value < key1 && root->value < key2){
+            root = root->right;
+        }
+        else return root;
+    }
 }
 void BST :: nodesAtDistanceK(int target , int k){
     map<TreeNode * , TreeNode *> parent;

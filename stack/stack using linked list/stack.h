@@ -8,14 +8,14 @@ class Stack{
         void pop();
         void rotate(int x);
         void traverse();
+        int top();
 };
 void Stack :: push(int x){
-    Node * n = new Node(x);
     if(list.currnodes == 0){
-        list.insert(n,1);
+        list.insert(x,1);
     }
     else{
-        list.insert(n,list.currnodes+1);
+        list.insert(x,list.currnodes+1);
     }
 }
 void Stack :: pop(){
@@ -33,6 +33,9 @@ void Stack :: rotate(int x){
     list.tail->next = list.head;
     list.tail = temp;
     list.head = curr;
+}
+int Stack :: top(){
+    return list.tail->val;
 }
 void Stack :: traverse(){
     list.traverse();

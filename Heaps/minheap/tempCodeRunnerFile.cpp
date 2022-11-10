@@ -1,0 +1,10 @@
+mp.insert(20);
+    mp.insert(25);
+    mp.insert(10);
+    mp.insert(4);
+    mp.insert(30);
+    mp.insert(36);
+    mp.insert(40);
+    mp.insert(22);
+    mp.insert(28);
+    mp.traverse();

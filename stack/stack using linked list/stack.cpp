@@ -9,10 +9,8 @@ int main(){
     s.push(4);
     s.push(5);
     s.traverse();
-    s.rotate(3);
-    s.traverse();
-    s.push(35);
-    s.push(38);
     s.pop();
+    cout << s.top()<<endl;
+    s.rotate(2);
     s.traverse();
 }

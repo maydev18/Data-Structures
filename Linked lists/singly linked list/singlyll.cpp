@@ -27,20 +27,20 @@ int main(){
         {
         case 1:
             cout << "enter the value of node : ";
-            cin >> node->val;
-            l.insert(node , 1);
+            cin >> val;
+            l.insert(val , 1);
             break;
         case 2:
             cout << "enter the value of node : ";
-            cin >> node->val;
-            l.insert(node , l.currnodes+1);
+            cin >> val;
+            l.insert(val , l.currnodes+1);
             break;
         case 3:
             cout << "enter the value of node : ";
-            cin >> node->val;
+            cin >> val;
             cout << "enter the position : ";
             cin >> pos;
-            l.insert(node,pos);
+            l.insert(val,pos);
             break;
         case 4:
             l.deleteNode(1);
@@ -90,8 +90,7 @@ int main(){
             while(pos <= val){
                 cout << "enter the value of " << pos << " node: ";
                 cin >> elem;
-                node = new Node(elem);
-                l1.insert(node,pos);
+                l1.insert(elem,pos);
                 pos++;
             }
             l.concatenate(l1);

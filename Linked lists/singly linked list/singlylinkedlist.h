@@ -40,7 +40,8 @@ class LinkedList{
         }
         cout << endl;
     }
-    void insert(Node * n , int pos){
+    void insert(int val , int pos){
+        Node * n = new Node(val);
         if(pos == 1){
             if(currnodes == 0){
                 head = n;
