@@ -5,7 +5,7 @@ using namespace std;
 class Notation{
     public:
         bool precedence(char top , char ch){
-            if(top == '$' && ch =='$') return false;
+            if(top == '$' && ch =='$') return true;
 
             else if(top == '$') return true; 
 
@@ -64,14 +64,13 @@ class Notation{
                 postfix.push_back(stk.top());
                 stk.pop();
             }
-
-
             return postfix;
         }
 };
 int main(){
     Notation n;
-    cout << n.infixToPostfix("((A-(B+C))*D)$(E+F)");
+    // cout << n.infixToPostfix("((A-(B+C))*D)$(E+F)");
     // cout << n.infixToPostfix("((A-(B/C))*((A/K)-L))");
+    cout << n.infixToPostfix("A-B+C");
     return 0;
 }

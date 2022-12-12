@@ -10,7 +10,6 @@ class MaxHeap{
             heap = new int[size+1];
         }
         MaxHeap(int heap[] , int size);//this will take the heapay and heapify it
-        
         void insert(int val);
         void traverse();
         int extractMax();

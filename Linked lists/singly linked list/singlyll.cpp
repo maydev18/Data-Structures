@@ -2,7 +2,7 @@
 #include "singlylinkedlist.h"
 using namespace std;
 int main(){
-    LinkedList l,l1;
+    LinkedList l,l1,l2;
     int choice = 1;
     do{
         Node * node = new Node();
@@ -98,6 +98,9 @@ int main(){
         case 14:
             choice = 0;
             cout << "Exiting program" << endl;
+            break;
+        case 15:
+            l.addPoly(l2);
             break;
         default:
             cout << "Wrong choice entered, Exiting program!!!"<<endl;

@@ -151,4 +151,22 @@ template <typename T> class LinkedList{
         tail = l.tail;
         currnodes +=l.currnodes;
     }
+    void printmiddle(){
+        Node<T> * c1 = head;
+        Node<T> * c2 = tail;
+        if(getSize()%2==1){
+            while(c1 != c2){
+                c1 = c1->next;
+                c2 = c2->prev;
+            }
+            cout << c2->val;
+        }
+        else{
+            while(c1->next != c2){
+                c1 = c1->next;
+                c2 = c2->prev;
+            }
+            cout << c2->val;
+        }
+    }
 };

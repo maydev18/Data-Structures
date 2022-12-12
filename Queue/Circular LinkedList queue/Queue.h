@@ -10,8 +10,7 @@ class Queue{
         void interleave();
 };
 void Queue :: push(int elem){
-    Node * node = new Node(elem);
-    list.insert(node , list.getSize()+1);
+    list.insert(elem , list.getSize()+1);
 }
 void Queue :: pop(){
     if(list.getSize()==0){

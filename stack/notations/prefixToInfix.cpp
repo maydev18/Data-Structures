@@ -30,7 +30,7 @@ class Notation{
 };
 int main(){
     Notation n;
-    cout << n.prefixToInfix("*-A/BC-/AKL");
+    cout << n.prefixToInfix("*-A/BC-/DEF");
     // cout << n.prefixToInfix("*-A/BC-/AKL");
     return 0;
 }

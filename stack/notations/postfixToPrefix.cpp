@@ -28,6 +28,6 @@ class Notation{
 };
 int main(){
     Notation n;
-    cout << n.postfixToPrefix("ABC/-AK/L-*");
+    cout << n.postfixToPrefix("ABC/-DE/F-*");
     return 0;
 }

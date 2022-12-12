@@ -20,7 +20,8 @@ int main(){
         cout << "11. Print element after a position \n";
         cout << "12. Check if list is empty or not \n";
         cout << "13. Concatenate \n";
-        cout << "14. Exit \n";
+        cout << "14. Reverse the list \n";
+        cout << "15. Exit \n";
         cout << "Enter your choice: ";
         cin >> userChoice;
         switch (userChoice)
@@ -97,6 +98,9 @@ int main(){
             l.concatenate(l1);
             break;
         case 14:
+            l.reverse();
+            break;  
+        case 15:
             choice = 0;
             cout << "Exiting program" << endl;
             break;

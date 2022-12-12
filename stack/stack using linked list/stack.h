@@ -11,23 +11,18 @@ class Stack{
         int top();
 };
 void Stack :: push(int x){
-    if(list.currnodes == 0){
-        list.insert(x,1);
-    }
-    else{
-        list.insert(x,list.currnodes+1);
-    }
+    list.insert(x , 1);
 }
 void Stack :: pop(){
-    list.deleteNode(list.currnodes);
+    list.deleteNode(1);
 }
 
 void Stack :: rotate(int x){
     Node * temp = list.head;
-    x = list.currnodes-x-1;
-    while(x--){
+    while(x!=1){
         temp =  temp->next;
-    }
+        x--;
+    } 
     Node * curr = temp->next;
     temp->next = NULL;
     list.tail->next = list.head;
@@ -35,7 +30,7 @@ void Stack :: rotate(int x){
     list.head = curr;
 }
 int Stack :: top(){
-    return list.tail->val;
+    return list.head->val;
 }
 void Stack :: traverse(){
     list.traverse();

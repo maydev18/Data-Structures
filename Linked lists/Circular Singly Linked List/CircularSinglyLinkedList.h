@@ -32,6 +32,7 @@ template <typename T> class LinkedList{
     int printElemBeforePos(int pos);
     int printElemAfterPos(int pos);
     void concatenate(LinkedList<T>& l);
+    void reverse();
 };
 template<typename T> LinkedList<T> ::LinkedList(){
     cursor = NULL;
@@ -144,4 +145,18 @@ template<typename T> void LinkedList<T>::concatenate(LinkedList<T>& l){
     l.cursor->next = n; 
     cursor = l.cursor;
     currnodes += l.currnodes;
+}
+template<typename T> void LinkedList<T> :: reverse(){
+    Node<T> * prev = cursor;
+    Node<T> * curr = prev->next;
+    Node<T> * next = curr->next;
+    bool flag = 1;
+    while(prev!=cursor || flag == 1){
+        flag = 0;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+        next = next->next;
+    }
+    cursor = curr;
 }

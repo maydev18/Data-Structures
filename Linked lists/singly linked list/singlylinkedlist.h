@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unordered_map>
 using namespace std;
 class Node{
     public:
@@ -135,5 +136,78 @@ class LinkedList{
         l.tail->next = NULL;
         tail = l.tail;
         currnodes += l.currnodes;
+    }
+    void removeDuplicates(){
+        Node * curr = head;
+        Node * prev = head;
+        unordered_map<int,int> freq;
+        while(curr){
+            freq[curr->val]++;
+            curr = curr->next;
+        }
+        curr = head;
+        while(curr){
+            if(freq[curr->val]!=1){
+                freq[curr->val]--;
+                if(curr == head){
+                    head = head->next;
+                    curr = head;
+                    prev = head;
+                }
+                else{
+                    prev->next = curr->next;
+                    prev = curr;
+                    curr = curr->next;
+                }
+            }
+            else{
+                prev = curr;
+                curr = curr->next;
+            }
+        }
+    }
+    void addPoly(LinkedList sec){
+        int deg; 
+        cout << "enter the degree of first polynomial: "; cin >> deg;
+        while(deg > -1){
+            int coeff;
+            cout << "enter the coefficient of x^" << deg<< " "; cin >>coeff;
+            insert(coeff , getSize()+1);
+            deg--;
+        }
+        
+        cout << endl;
+        cout << "enter the degree of second polynomial: "; cin >> deg;
+        while(deg > -1){
+            int coeff;
+            cout << "enter the coefficient of x^" << deg<< " "; cin >>coeff;
+            sec.insert(coeff , sec.getSize()+1);
+            deg--;
+        }
+        LinkedList ans;
+        Node * t1 = head;
+        Node * t2 = sec.head;
+        while(t1 || t2){
+            if(t1 && t2){
+                ans.insert(t1->val + t2->val , ans.getSize()+1);
+                t1 = t1->next;
+                t2 = t2->next;
+            }
+            else if(t1){
+                ans.insert(t1->val , ans.getSize()+1);
+                t1 = t1->next;
+            }
+            else{
+                ans.insert(t2->val , ans.getSize()+1);
+                t2 = t2->next;
+            }
+        }
+        t1 = ans.head;
+        int power = ans.getSize()-1;
+        while(t1){
+            cout << t1->val << "x^" <<power << "  + ";
+            t1 = t1->next;
+            power--;
+        }
     }
 };

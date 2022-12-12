@@ -6,6 +6,14 @@ class Notation{
     public:
         void reverse(string & s){
             int n  = s.size();
+            for(int i = 0 ; i<n ; i++){
+                if(s[i]==')'){
+                    s[i] = '(';
+                }
+                else if(s[i]=='('){
+                    s[i] = ')';
+                }
+            }
             for(int i = 0 ; i < n/2 ; i++){
                 char temp = s[i];
                 s[i] = s[n-i-1];
@@ -83,6 +91,6 @@ class Notation{
 };
 int main(){
     Notation n;
-    cout << n.infixToPrefix("X+Y*Z/W+U");
+    cout << n.infixToPrefix("((A-(B/C))*((A/K)-L))");
     return 0;
 }

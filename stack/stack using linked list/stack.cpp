@@ -8,9 +8,6 @@ int main(){
     s.push(3);
     s.push(4);
     s.push(5);
-    s.traverse();
-    s.pop();
-    cout << s.top()<<endl;
-    s.rotate(2);
+    s.rotate(0);
     s.traverse();
 }

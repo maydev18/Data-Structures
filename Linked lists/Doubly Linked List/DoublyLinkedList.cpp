@@ -100,6 +100,9 @@ int main(){
             choice = 0;
             cout << "Exiting program" << endl;
             break;
+        case 15:
+            l.printmiddle();
+            break;
         default:
             cout << "Wrong choice entered, Exiting program!!!"<<endl;
             choice = 0;
